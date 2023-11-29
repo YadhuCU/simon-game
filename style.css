@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&family=Vina+Sans&display=swap");
+
+:root {
+  --ff-primary: "Vina Sans", sans-serif;
+  --ff-secondary: "Space Mono", monospace;
+
+  --clr-bg: #222;
+  --clr-ff-red: #ffc9c9;
+  --clr-ff-blue: #1971c2;
+
+  --clr-blue: #1b85b8;
+  --clr-green: #559e83;
+  --clr-red: #ae5a41;
+  --clr-yellow: #c3cb71;
+  --clr-white: #fafafa;
+
+  --fw-400: 400;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-primary);
+  background: var(--clr-bg);
+}
+a {
+  text-decoration: none;
+}
+.heading {
+  font-size: clamp(7rem, 15vw, 20rem);
+  font-weight: var(--fw-400);
+  font-family: var(--ff-primary);
+  letter-spacing: 1vw;
+  animation: color 5s infinite linear;
+}
+.content {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: var(--fw-400);
+  font-family: var(--ff-secondary);
+}
+.f-blue {
+  color: var(--clr-ff-blue);
+}
+.f-white {
+  color: white;
+}
+.f-red {
+  color: var(--clr-ff-red);
+  opacity: 0.7;
+}
+.text-center {
+  text-align: center;
+}
+.container {
+  width: min(80%, 1200px);
+  height: 100vh;
+  margin-inline: auto;
+}
+.title > h1 {
+  position: relative;
+}
+.title > h1::after {
+  content: "Simon";
+  font-size: clamp(3rem, 15vw, 10rem);
+}
+.title > h1::after {
+  font-family: inherit;
+  color: #fafafa;
+  font-weight: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -45%);
+}
+
+@keyframes color {
+  0% {
+    color: var(--clr-red);
+  }
+  25% {
+    color: var(--clr-blue);
+  }
+  50% {
+    color: var(--clr-yellow);
+  }
+  100% {
+    color: var(--clr-green);
+  }
+}
+.grid {
+  display: grid;
+  align-items: center;
+}
+.box {
+  border-radius: 100%;
+  display: grid;
+  width: clamp(300px, 40vw, 600px);
+  height: clamp(300px, 40vw, 600px);
+  grid-template-columns: repeat(2, clamp(150px, 20vw, 300px));
+  grid-template-rows: repeat(2, clamp(150px, 20vw, 300px));
+  /* border: 15px solid white; */
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+}
+.box-col {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.circle {
+  width: clamp(150px, 20vw, 300px);
+  height: clamp(150px, 20vw, 300px);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--clr-bg);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+#red {
+  background: var(--clr-red);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+#green {
+  background: var(--clr-green);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+#blue {
+  background: var(--clr-blue);
+  border-top: none;
+  border-bottom: none;
+}
+#yellow {
+  background: var(--clr-yellow);
+}
+.click {
+  opacity: 1;
+}
+.click#red {
+  background: radial-gradient(
+    farthest-corner at 130px 140px,
+    var(--clr-white) -90%,
+    var(--clr-red)
+  );
+}
+.click#blue {
+  background: radial-gradient(
+    farthest-corner at 130px 140px,
+    var(--clr-white) -90%,
+    var(--clr-blue)
+  );
+}
+.click#green {
+  background: radial-gradient(
+    farthest-corner at 130px 140px,
+    var(--clr-white) -90%,
+    var(--clr-green)
+  );
+}
+.click#yellow {
+  background: radial-gradient(
+    farthest-corner at 130px 140px,
+    var(--clr-white) -90%,
+    var(--clr-yellow)
+  );
+}
+.over {
+  box-shadow: 0px 0px 55px 10px rgba(255, 255, 255, 0.9),
+    inset 0px 0px 10px 10px rgba(255, 255, 255, 0.9);
+}
